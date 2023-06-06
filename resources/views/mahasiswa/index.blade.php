@@ -6,6 +6,7 @@
     <th>Nim</th>
     <th>Jenis kelamin</th>
     <th>Alamat</th>
+    <th>Aksi</th>
 </tr>
 @foreach($mahasiswa as $m)
 <tr>
@@ -14,6 +15,7 @@
     <td>{{$m->nim}}</td>
     <td>{{$m->jenis_kelamin}}</td>
     <td>{{$m->alamat}}</td>
+    <td><a href="/mahasiswa/{{$m->id}}/edit">Edit</a></td>
 </tr>
 @endforeach
 </table>
