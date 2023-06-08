@@ -15,7 +15,14 @@
     <td>{{$m->nim}}</td>
     <td>{{$m->jenis_kelamin}}</td>
     <td>{{$m->alamat}}</td>
-    <td><a href="/mahasiswa/{{$m->id}}/edit">Edit</a></td>
+    <td>
+        <a href="/mahasiswa/{{$m->id}}/edit">Edit</a>
+        <form action="/mahasiswa/{{$m->id}}" method="POST">
+            @csrf
+            @method('delete')
+            <input type="submit" value="Delete">
+        </form>
+    </td>
 </tr>
 @endforeach
 </table>

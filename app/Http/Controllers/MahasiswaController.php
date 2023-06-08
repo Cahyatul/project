@@ -36,4 +36,11 @@ class MahasiswaController extends Controller
         $mahasiswa->update($request->except(['_token','submit']));
         return redirect('/mahasiswa');
     }
+
+    public function destroy($id)
+    {
+        $mahasiswa = Mahasiswa::find($id);
+        $mahasiswa->delete();
+        return redirect('/mahasiswa');
+    }
 }
